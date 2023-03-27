@@ -8,7 +8,9 @@ import {
 	Toolbar,
 	Typography,
 	IconButton,
+	Box,
 } from '@mui/material';
+
 import MenuIcon from '@mui/icons-material/Menu';
 
 import HomePageIcon from '../icons/home-page-icon';
@@ -24,47 +26,7 @@ import HousingSectorIcon from '../icons/housing-sector-icon';
 import LandViolationIcon from '../icons/land-violation-icon';
 import MunicipalRevenueIcon from '../icons/municipal-revenue-icon';
 import StreetVendorsIcon from '../icons/street-vendors-icon';
-
-const drawerWidth = 240;
-const transitionDuration = 1000;
-
-const themedStyles = (theme: Theme, mobileResponsiveWidth: string | number) => {
-	return {
-		appBar: {
-			zIndex: theme.zIndex.drawer + 1,
-		},
-		drawer: {
-			width: mobileResponsiveWidth,
-			'& .MuiBackdrop-root': {
-				display: 'none',
-			},
-		},
-		menuButton: {
-			marginRight: 2,
-		},
-		drawerPaper: {
-			width: mobileResponsiveWidth,
-			backgroundColor: 'rgba(120, 120, 120, 0.2)',
-		},
-		content: {
-			padding: 4,
-			minWidth: mobileResponsiveWidth,
-			marginLeft: 0,
-			transition: theme.transitions.create('margin', {
-				easing: theme.transitions.easing.easeOut,
-				duration: transitionDuration,
-			}),
-		},
-		contentShift: {
-			minWidth: mobileResponsiveWidth,
-			marginLeft: mobileResponsiveWidth,
-			transition: theme.transitions.create('margin', {
-				easing: theme.transitions.easing.easeOut,
-				duration: transitionDuration,
-			}),
-		},
-	};
-};
+import VisualPollutionPage from '../../pages/visual-pollution-page';
 
 const sideBarItems = [
 	{ id: '1', text: 'Home', link: '#', icon: <HomePageIcon /> },
@@ -149,7 +111,7 @@ const sideBarItems = [
 ];
 
 export default function Layout() {
-	const [open, setOpen] = useState<boolean>(true);
+	const [open, setOpen] = useState<boolean>(false);
 
 	const handleMenuClick = () => {
 		setOpen(!open);
@@ -158,13 +120,17 @@ export default function Layout() {
 	return (
 		<>
 			<AppBar sx={{ position: 'fixed' }}>
-				<IconButton onClick={handleMenuClick} edge='start' sx={{}}>
+				{/* <IconButton onClick={handleMenuClick} edge='start' sx={{}}>
 					<MenuIcon />
-				</IconButton>
-				<Toolbar>
-					<Typography variant='h6' noWrap>
-						MUI Styling
-					</Typography>
+				</IconButton> */}
+				<Toolbar
+					sx={{
+						backgroundColor: '#FFFFFF',
+						color: '#212B36',
+						maxHeight: '64px',
+					}}
+				>
+					<Typography noWrap>MUI Styling</Typography>
 				</Toolbar>
 			</AppBar>
 			<Drawer
@@ -173,12 +139,7 @@ export default function Layout() {
 				open={open}
 				// sx={themedStyles(theme, responsiveDrawerWidth).drawer}
 				PaperProps={{
-					elevation: 9,
-					// sx: themedStyles(theme, responsiveDrawerWidth).drawerPaper,
-				}}
-				transitionDuration={{
-					enter: transitionDuration,
-					exit: transitionDuration,
+					sx: { backgroundColor: '#EEF1FA;' },
 				}}
 			>
 				<Toolbar />
@@ -197,18 +158,10 @@ export default function Layout() {
 					))}
 				</List>
 			</Drawer>
-			{/* <main
-			style={
-				{
-					...themedStyles(theme, responsiveDrawerWidth).content,
-					...(open
-						? themedStyles(theme, responsiveDrawerWidth).contentShift
-						: {}),
-				}
-			}
-			>
+			<main>
 				<Toolbar />
-			</main> */}
+				<VisualPollutionPage />
+			</main>
 		</>
 	);
 }
