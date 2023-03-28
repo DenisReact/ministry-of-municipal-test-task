@@ -41,7 +41,7 @@ export default function ProgressBar({
 					},
 					'& > svg > circle': {
 						strokeLinecap: 'round',
-						strokeWidth: '6px',
+						strokeWidth: '4px',
 					},
 				}}
 			/>
