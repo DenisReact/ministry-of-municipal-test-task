@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* map styles */
 .leaflet-control-container .leaflet-bottom.leaflet-right {
   display: none;

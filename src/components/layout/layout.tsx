@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 
 import { sideBarItems } from '../../mockData';
-import Paper from './paper';
 import OpenSidebarIcon from '../icons/open-sidebar-icon';
 import VisualPollutionIcon from '../icons/visual-pollution-icon';
 import FilterIcon from '../icons/filter-icon';
@@ -18,6 +17,7 @@ import SettingsIcon from '../icons/settings-icon';
 import SupportIcon from '../icons/support-icon';
 import NotificationIcon from '../icons/notification-icon';
 import UserPng from '../../assets/imgs/User.png'
+import LogoIcon from '../icons/logo-icon';
 
 interface LayoutProps {
 	children: React.ReactElement | React.ReactElement[];
@@ -26,12 +26,17 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
 	return (
 		<>
-			<AppBar sx={{ position: 'fixed' }}>
+			<AppBar sx={{ 
+				position: 'fixed', 
+				right: '0',
+				width: 'calc(100vw - 96px)',
+				boxShadow: 'none'
+				}}>
 				<Toolbar
 					sx={{
 						backgroundColor: '#FFFFFF',
 						color: '#212B36',
-						maxHeight: '64px',
+						height: '64px',
 						display: 'flex',
 						padding: '20px 40px',
 					}}
@@ -55,19 +60,25 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 					position: 'fixed',
 					zIndex: '100',
 					height: '100vh',
-					maxWidth: '96px',
 					display: 'flex',
 					flex: 'column',
 					gap: '15px',
+					width: '96px' 
 				}}
 			>
-				<Paper sx={{ height: '100%', paddingTop: '60px' }}>
-					<List>
+				<Box sx={{ background: 'white', borderRight: '1px solid rgb(229, 229, 229)', zIndex: '200', height: '100%', width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column', paddingTop: '16px'}}>
+					<Box sx={{minHeight: '64px'}}>
+						<LogoIcon />
+					</Box>
+					<List sx={{width: '100%'}}>
 						{sideBarItems.map((el, index) => (
 							<ListItem
 								key={el.id}
 								sx={{
 									padding: '16px',
+									width: '100%',
+									display: 'flex',
+									justifyContent: 'center'
 								}}
 								style={{
 									borderLeft: index === 1 ? '3px solid #23A698' : 'none',
@@ -77,7 +88,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 							</ListItem>
 						))}
 					</List>
-				</Paper>
+				</Box>
 			</Box>
 			<Box
 				component='main'
@@ -88,10 +99,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 					backgroundColor: '#EEF1FA',
-					paddingLeft: '56px',
+					paddingLeft: '96px',
 				}}
 			>
-				<Toolbar />
 				{children}
 			</Box>
 		</>

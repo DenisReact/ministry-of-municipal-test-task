@@ -12,7 +12,7 @@ import MunicipalRevenueIcon from './components/icons/municipal-revenue-icon';
 import RedAlertIcon from './components/icons/red-alert-icon';
 import RetailIcon from './components/icons/retail-icon';
 import StreetVendorsIcon from './components/icons/street-vendors-icon';
-import VisualPollutionIcon from './components/icons/visual-pollution-icon';
+import TrashIcon from './components/icons/trash-icon';
 import YellowErrorIcon from './components/icons/yellow-error-icon';
 
 export type TDiagrams = {
@@ -313,7 +313,7 @@ export const sideBarItems = [
 		id: '2',
 		text: 'Visual Pollution',
 		link: '#',
-		icon: <VisualPollutionIcon />,
+		icon: <TrashIcon />,
 	},
 	{
 		id: '3',
@@ -335,12 +335,6 @@ export const sideBarItems = [
 	},
 	{
 		id: '6',
-		text: 'Retail',
-		link: '#',
-		icon: <RetailIcon />,
-	},
-	{
-		id: '7',
 		text: 'Retail',
 		link: '#',
 		icon: <RetailIcon />,
