@@ -1,27 +1,21 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import {
 	AppBar,
 	Box,
-	Drawer,
 	List,
 	ListItem,
 	Toolbar,
 	Typography,
 } from '@mui/material';
-import VisualPollutionPage from '../../pages/visual-pollution-page';
+
 import { sideBarItems } from '../../mockData';
+import Paper from './paper';
 
 interface LayoutProps {
-	children: React.ReactElement | React.ReactElement[]
+	children: React.ReactElement | React.ReactElement[];
 }
 
-const Layout: FC<LayoutProps> = ({children}) => {
-	const [open, setOpen] = useState<boolean>(false);
-
-	const handleMenuClick = () => {
-		setOpen(!open);
-	};
-
+const Layout: FC<LayoutProps> = ({ children }) => {
 	return (
 		<>
 			<AppBar sx={{ position: 'fixed' }}>
@@ -35,42 +29,52 @@ const Layout: FC<LayoutProps> = ({children}) => {
 					<Typography noWrap></Typography>
 				</Toolbar>
 			</AppBar>
-			<Drawer
-				disableEnforceFocus
-				variant='temporary'
-				open={open}
-				PaperProps={{
-					sx: { backgroundColor: '#EEF1FA;' },
+			<Box
+				sx={{
+					position: 'fixed',
+					zIndex: '100',
+					height: '100vh',
+					maxWidth: '96px',
+					display: 'flex',
+					flex: 'column',
+					gap: '15px',
 				}}
 			>
-				<Toolbar />
-				<List>
-					{sideBarItems.map((el) => (
-						<ListItem
-							key={el.id}
-							sx={{
-								borderBottom: '1px solid',
-								borderBottomColor: 'primary.main',
-							}}
-						>
-							{el.icon}
-						</ListItem>
-					))}
-				</List>
-			</Drawer>
-			<Box component='main' sx={{
-				minHeight: '100vh', 
-				backgroundImage: 'url(/assets/assets.svg)',
-				backgroundRepeat: 'no-repeat',
-				backgroundSize: 'cover',
-				backgroundPosition: 'center',
-				backgroundColor: '#EEF1FA',
-				}}>
+				<Paper sx={{ height: '100%', paddingTop: '60px' }}>
+					<List>
+						{sideBarItems.map((el, index) => (
+							<ListItem
+								key={el.id}
+								sx={{
+									padding: '16px',
+								}}
+								style={{
+									borderLeft: index === 1 ? '3px solid #23A698' : 'none',
+								}}
+							>
+								{el.icon}
+							</ListItem>
+						))}
+					</List>
+				</Paper>
+			</Box>
+			<Box
+				component='main'
+				sx={{
+					minHeight: '100vh',
+					backgroundImage: 'url(/assets/assets.svg)',
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+					backgroundColor: '#EEF1FA',
+					paddingLeft: '56px',
+				}}
+			>
 				<Toolbar />
 				{children}
 			</Box>
 		</>
 	);
-}
+};
 
-export default Layout
+export default Layout;
