@@ -5,6 +5,7 @@ import CircularProgress, {
 } from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import ProgressBar from '../components/progress-bar/progress-bar';
+import MapWidget from '../components/map-widget';
 
 const progressBarsList = [
 	{
@@ -53,6 +54,7 @@ export default function VisualPollutionPage() {
 					))}
 				</Box>
 			))}
+			<MapWidget />
 		</Box>
 	);
 }
