@@ -45,12 +45,13 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 							display: 'flex',
 							alignItems: 'center',
 							gap: '16px',
-							padding: '20px',
+							padding: '18px',
 							backgroundColor: '#FFFFFF',
+							opacity: '0.9',
 							boxShadow:
 								'0px 100px 80px rgba(108, 73, 172, 0.07), 0px 41.7776px 33.4221px rgba(108, 73, 172, 0.0503198), 0px 22.3363px 17.869px rgba(108, 73, 172, 0.0417275), 0px 12.5216px 10.0172px rgba(108, 73, 172, 0.035), 0px 6.6501px 5.32008px rgba(108, 73, 172, 0.0282725), 0px 2.76726px 2.21381px rgba(108, 73, 172, 0.0196802)',
 							borderRadius: '10px',
-							width: '50%',
+							maxWidth: '50%',
 						}}
 					>
 						<ProgressBar
@@ -72,7 +73,21 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 							>
 								{el.title}
 							</Typography>
-							<Typography>{el.time}</Typography>
+							<Typography
+								sx={{
+									fontFamily: 'Roboto, sans-serif',
+									fontStyle: 'normal',
+									fontWeight: '400',
+									fontSize: '12px',
+									lineHeight: '16px',
+									letterSpacing: '0.4px',
+									color: '#383874',
+									mixBlendMode: 'normal',
+									opacity: '0.6',
+								}}
+							>
+								{el.time}
+							</Typography>
 							{el.value && (
 								<Typography
 									sx={{
@@ -93,6 +108,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 				sx={{
 					padding: '20px',
 					backgroundColor: '#FFFFFF',
+					opacity: '0.9',
 					boxShadow:
 						'0px 100px 80px rgba(108, 73, 172, 0.07), 0px 41.7776px 33.4221px rgba(108, 73, 172, 0.0503198), 0px 22.3363px 17.869px rgba(108, 73, 172, 0.0417275), 0px 12.5216px 10.0172px rgba(108, 73, 172, 0.035), 0px 6.6501px 5.32008px rgba(108, 73, 172, 0.0282725), 0px 2.76726px 2.21381px rgba(108, 73, 172, 0.0196802)',
 					borderRadius: '10px',
@@ -124,7 +140,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 					</Typography>
 					<Typography
 						sx={{
-							// fontFamily: 'Roboto',
+							fontFamily: 'Roboto, sans-serif',
 							fontStyle: 'normal',
 							fontWeight: '400',
 							fontSize: '12px',

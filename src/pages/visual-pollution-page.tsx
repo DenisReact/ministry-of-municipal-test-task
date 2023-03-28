@@ -13,7 +13,7 @@ export default function VisualPollutionPage() {
 				padding: '86px 40px 0 32px',
 				display: 'flex',
 				gap: '32px',
-				'@media (max-width: 1024px)': {
+				'@media (max-width: 1400px)': {
 					flexDirection: 'column',
 				},
 			}}
