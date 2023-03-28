@@ -12,6 +12,7 @@ import ProgressBar from './progress-bar';
 import Diagram from './diagram';
 
 import { TDataEl, TProgress } from '../../mockData';
+import Paper from '../layout/paper';
 
 export default function ProgressCard({ data }: { data: TDataEl }) {
 	return (
@@ -39,18 +40,13 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 			</Typography>
 			<Box sx={{ display: 'flex', gap: '16px' }}>
 				{data.progress.map((el: TProgress) => (
-					<Box
+					<Paper
 						key={el.id}
 						sx={{
 							display: 'flex',
 							alignItems: 'center',
 							gap: '16px',
 							padding: '18px',
-							backgroundColor: '#FFFFFF',
-							opacity: '0.9',
-							boxShadow:
-								'0px 100px 80px rgba(108, 73, 172, 0.07), 0px 41.7776px 33.4221px rgba(108, 73, 172, 0.0503198), 0px 22.3363px 17.869px rgba(108, 73, 172, 0.0417275), 0px 12.5216px 10.0172px rgba(108, 73, 172, 0.035), 0px 6.6501px 5.32008px rgba(108, 73, 172, 0.0282725), 0px 2.76726px 2.21381px rgba(108, 73, 172, 0.0196802)',
-							borderRadius: '10px',
 							maxWidth: '50%',
 						}}
 					>
@@ -101,17 +97,13 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 								</Typography>
 							)}
 						</Box>
-					</Box>
+					</Paper>
 				))}
 			</Box>
-			<Box
+			<Paper
 				sx={{
 					padding: '20px',
-					backgroundColor: '#FFFFFF',
-					opacity: '0.9',
-					boxShadow:
-						'0px 100px 80px rgba(108, 73, 172, 0.07), 0px 41.7776px 33.4221px rgba(108, 73, 172, 0.0503198), 0px 22.3363px 17.869px rgba(108, 73, 172, 0.0417275), 0px 12.5216px 10.0172px rgba(108, 73, 172, 0.035), 0px 6.6501px 5.32008px rgba(108, 73, 172, 0.0282725), 0px 2.76726px 2.21381px rgba(108, 73, 172, 0.0196802)',
-					borderRadius: '10px',
+
 					display: 'flex',
 					maxWidth: '100%',
 					alignItems: 'center',
@@ -173,7 +165,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 				>
 					<Diagram data={data.diagram.data} />
 				</Box>
-			</Box>
+			</Paper>
 		</Box>
 	);
 }

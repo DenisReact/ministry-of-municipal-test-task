@@ -4,7 +4,6 @@ import {
 	Drawer,
 	List,
 	ListItem,
-	Theme,
 	Toolbar,
 	Typography,
 	IconButton,
