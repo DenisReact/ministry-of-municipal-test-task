@@ -5,11 +5,11 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import Paper from '@mui/material/Paper';
 
 import { mockTable, TTable } from '../mockData';
 
 import CustomTableRow from './table-row';
+import Paper from '../components/layout/paper';
 
 const tableHeadList = [
 	'Description',
@@ -22,8 +22,8 @@ const tableHeadList = [
 
 export default function CustomTable() {
 	return (
-		<TableContainer component={Paper}>
-			<Table sx={{ minWidth: 750 }} aria-label='simple table'>
+		<Paper sx={{ maxWidth: '1032px' }}>
+			<Table aria-label='simple table'>
 				<TableHead>
 					<TableRow>
 						{tableHeadList.map((el: string, index: number) => (
@@ -43,6 +43,6 @@ export default function CustomTable() {
 					))}
 				</TableBody>
 			</Table>
-		</TableContainer>
+		</Paper>
 	);
 }
