@@ -31,7 +31,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 					fontSize: '34px',
 					lineHeight: '44px',
 					letterSpacing: '-0.44px',
-					color: '#383874',
+					color: ['primary.main'],
 					marginBottom: '8px',
 				}}
 			>
@@ -59,7 +59,19 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 							secondaryColor={el.secondaryColor}
 						/>
 						<Box>
-							<Typography>{el.title}</Typography>
+							<Typography
+								sx={{
+									fontWeight: '300',
+									fontSize: '16px',
+									lineHeight: '24px',
+									letterSpacing: '0.44px',
+									color: ['primary.main'],
+									flex: 'none',
+									whiteSpace: 'nowrap',
+								}}
+							>
+								{el.title}
+							</Typography>
 							<Typography>{el.time}</Typography>
 							{el.value && (
 								<Typography
@@ -105,7 +117,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 							fontSize: '16px',
 							lineHeight: '24px',
 							letterSpacing: '0.44px',
-							color: ' #383874',
+							color: ['primary.main'],
 						}}
 					>
 						{data.diagram.title}
@@ -118,7 +130,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 							fontSize: '12px',
 							lineHeight: '16px',
 							letterSpacing: '0.4px',
-							color: '#383874',
+							color: ['primary.main'],
 							opacity: '0.6',
 							display: 'flex',
 							alignItems: 'center',
@@ -130,7 +142,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 						) : (
 							<TrendingDownIcon style={{ color: '#FF708B' }} />
 						)}
-						({data.diagram.duration})
+						{data.diagram.duration}
 					</Typography>
 				</Box>
 				<Box
