@@ -1,3 +1,7 @@
+import GreenCheckIcon from './components/icons/green-check-icon';
+import RedAlertIcon from './components/icons/red-alert-icon';
+import YellowErrorIcon from './components/icons/yellow-error-icon';
+
 export type TDiagrams = {
 	title: string;
 	duration: string;
@@ -14,6 +18,17 @@ export type TDiagrams = {
 			showLine: boolean;
 		}[];
 	};
+};
+
+export type TTable = {
+	id: string;
+	icon: JSX.Element;
+	description: string;
+	owner: string;
+	Impacted_kpi: (string | number)[];
+	impacted_sub_kpi: (string | number)[];
+	Impacted_vc_step: string;
+	geography: string;
 };
 
 export type TProgress = {
@@ -217,5 +232,63 @@ export const mockData = [
 				],
 			},
 		},
+	},
+];
+
+export const mockTable = [
+	{
+		id: '1',
+		icon: <GreenCheckIcon />,
+		description:
+			'Review process with Makkah Amanah to improve their Regulation enforcement rate',
+		owner: 'Enforcement  Team',
+		Impacted_kpi: ['Regulation  enforcement rate', 10],
+		impacted_sub_kpi: ['Regulation clause​​', 10],
+		Impacted_vc_step: 'Plan / Detect',
+		geography: 'Riyadh',
+	},
+	{
+		id: '2',
+		icon: <RedAlertIcon />,
+		description:
+			'Identify the root-cause of the lack of visibility for the sub-KPI Number of visits in the segment for the Jeddah Amanah',
+		owner: 'DTSC',
+		Impacted_kpi: ['Coverage ratio', -18],
+		impacted_sub_kpi: ['Number of visits​​', 9],
+		Impacted_vc_step: 'Detect / Process',
+		geography: 'Jeddah',
+	},
+	{
+		id: '3',
+		icon: <YellowErrorIcon />,
+		description:
+			'Address the decrease in collection conversion rate sub-KPI for the Dammam Amanah',
+		owner: 'Licensing Team',
+		Impacted_kpi: ['Resolution ratio', -23],
+		impacted_sub_kpi: ['Resolution ratio', 15],
+		Impacted_vc_step: 'Resolve',
+		geography: 'Dammam',
+	},
+	{
+		id: '4',
+		icon: <YellowErrorIcon />,
+		description:
+			'Review process with Makkah Amanah to improve their Regulation enforcement rate',
+		owner: 'Enforcement  Team',
+		Impacted_kpi: ['Regulation  enforcement rate', -10],
+		impacted_sub_kpi: ['Regulation clause​​', 10],
+		Impacted_vc_step: 'Plan / Detect',
+		geography: 'Riyadh',
+	},
+	{
+		id: '5',
+		icon: <YellowErrorIcon />,
+		description:
+			'Review process with Makkah Amanah to improve their Regulation enforcement rate',
+		owner: 'Enforcement  Team',
+		Impacted_kpi: ['Regulation  enforcement rate', 10],
+		impacted_sub_kpi: ['Regulation clause​​', 10],
+		Impacted_vc_step: 'Plan / Detect',
+		geography: 'Riyadh',
 	},
 ];

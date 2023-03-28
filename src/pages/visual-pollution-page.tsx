@@ -6,6 +6,7 @@ import ProgressCard from '../components/ui/progress-card';
 import MapWidget from '../components/map-widget';
 
 import { mockData, TDataEl } from '../mockData';
+import CustomTable from '../table';
 
 export default function VisualPollutionPage() {
 	return (
@@ -32,6 +33,9 @@ export default function VisualPollutionPage() {
 			</Box>
 			<Box>
 				<MapWidget />
+			</Box>
+			<Box>
+				<CustomTable />
 			</Box>
 		</Box>
 	);
