@@ -1,60 +1,38 @@
 import React from 'react';
-import { Box } from '@mui/material';
-import CircularProgress, {
-	CircularProgressProps,
-} from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
-import ProgressBar from '../components/progress-bar/progress-bar';
+
+import Box from '@mui/material/Box';
+
+import ProgressCard from '../components/ui/progress-card';
 import MapWidget from '../components/map-widget';
 
-const progressBarsList = [
-	{
-		id: '1',
-		title: 'Regulation enforcement rate',
-		progress: [
-			{
-				id: '1',
-				percent: 45,
-				title: 'Current state',
-				time: '(1 Week)',
-				value: 10,
-				primaryColor: '#DBDFF1',
-				secondaryColor: '#5379FB',
-			},
-			{
-				id: '2',
-				percent: 60,
-				title: 'Current state',
-				time: '(6 month)',
-				primaryColor: '#DBDFF1',
-				secondaryColor: '#4CAFA3',
-			},
-		],
-	},
-];
+import { mockData, TDataEl } from '../mockData';
 
 export default function VisualPollutionPage() {
 	return (
 		<Box
-			sx={{ backgroundColor: '#EEF1FA', height: '100vh', paddingTop: '86px' }}
+			sx={{
+				backgroundColor: '#EEF1FA',
+				height: '100vh',
+				padding: '86px 40px 0 32px',
+			}}
 			component='section'
 		>
-			{progressBarsList.map((el) => (
-				<Box key={el.id}>
-					{el.progress.map((el) => (
-						<Box key={el.id}>
-							{
-								<ProgressBar
-									value={el.percent}
-									primaryColor={el.primaryColor}
-									secondaryColor={el.secondaryColor}
-								/>
-							}
-						</Box>
-					))}
-				</Box>
-			))}
-			<MapWidget />
+			<Box
+				sx={{
+					display: 'flex',
+					gap: '32px',
+					'@media (max-width: 1300px)': {
+						flexDirection: 'column',
+					},
+				}}
+			>
+				{mockData.map((el: TDataEl) => (
+					<ProgressCard data={el} />
+				))}
+			</Box>
+			<Box>
+				<MapWidget />
+			</Box>
 		</Box>
 	);
 }
