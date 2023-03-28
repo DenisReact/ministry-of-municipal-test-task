@@ -1,5 +1,18 @@
+import BuildingAndConstructionIcon from './components/icons/building-and-construction-icon';
+import CleaningIcon from './components/icons/cleaning-icon';
+import EnvironmentIcon from './components/icons/environment-icon';
+import ExcavationIcon from './components/icons/excavation-image-icon';
 import GreenCheckIcon from './components/icons/green-check-icon';
+import GroupHousingIcon from './components/icons/group-housing-icon';
+import HealthIcon from './components/icons/health-icon';
+import HomePageIcon from './components/icons/home-page-icon';
+import HousingSectorIcon from './components/icons/housing-sector-icon';
+import LandViolationIcon from './components/icons/land-violation-icon';
+import MunicipalRevenueIcon from './components/icons/municipal-revenue-icon';
 import RedAlertIcon from './components/icons/red-alert-icon';
+import RetailIcon from './components/icons/retail-icon';
+import StreetVendorsIcon from './components/icons/street-vendors-icon';
+import VisualPollutionIcon from './components/icons/visual-pollution-icon';
 import YellowErrorIcon from './components/icons/yellow-error-icon';
 
 export type TDiagrams = {
@@ -290,5 +303,88 @@ export const mockTable = [
 		impacted_sub_kpi: ['Regulation clause​​', 10],
 		Impacted_vc_step: 'Plan / Detect',
 		geography: 'Riyadh',
+	},
+];
+
+
+export const sideBarItems = [
+	{ id: '1', text: 'Home', link: '#', icon: <HomePageIcon /> },
+	{
+		id: '2',
+		text: 'Visual Pollution',
+		link: '#',
+		icon: <VisualPollutionIcon />,
+	},
+	{
+		id: '3',
+		text: 'Building & Construction',
+		link: '#',
+		icon: <BuildingAndConstructionIcon />,
+	},
+	{
+		id: '4',
+		text: 'Excavation',
+		link: '#',
+		icon: <ExcavationIcon />,
+	},
+	{
+		id: '5',
+		text: 'Health',
+		link: '#',
+		icon: <HealthIcon />,
+	},
+	{
+		id: '6',
+		text: 'Retail',
+		link: '#',
+		icon: <RetailIcon />,
+	},
+	{
+		id: '7',
+		text: 'Retail',
+		link: '#',
+		icon: <RetailIcon />,
+	},
+	{
+		id: '8',
+		text: 'Cleaning',
+		link: '#',
+		icon: <CleaningIcon />,
+	},
+	{
+		id: '9',
+		text: 'Environment',
+		link: '#',
+		icon: <EnvironmentIcon />,
+	},
+	{
+		id: '10',
+		text: 'Group Housing',
+		link: '#',
+		icon: <GroupHousingIcon />,
+	},
+	{
+		id: '11',
+		text: 'Housing Sector',
+		link: '#',
+		icon: <HousingSectorIcon />,
+	},
+	{
+		id: '12',
+		text: 'Land Violation',
+		link: '#',
+		icon: <LandViolationIcon />,
+	},
+	{
+		id: '13',
+		text: 'Municipal Revenue',
+		link: '#',
+		icon: <MunicipalRevenueIcon />,
+	},
+	{
+		id: '14',
+		text: 'Street Vendors',
+		link: '#',
+		icon: <StreetVendorsIcon />,
 	},
 ];

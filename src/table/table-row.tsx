@@ -1,6 +1,6 @@
 import React from 'react';
 import TableRow from '@mui/material/TableRow';
-import { TableCell } from '@mui/material';
+import { Box, TableCell } from '@mui/material';
 import { TTable } from '../mockData';
 
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
@@ -16,9 +16,15 @@ export default function CustomTableRow({ data }: { data: TTable }) {
 			}}
 		>
 			<TableCell align='left'>
-				{data.icon} {data.description}
+				<Box sx={{display: 'flex'}}>
+					<Box sx={{minWidth: '20px', mr: '10px'}}>
+					{data.icon}
+					</Box>
+				 {data.description}
+				</Box>
+				
 			</TableCell>
-			<TableCell align='center'>{data.owner}</TableCell>
+			<TableCell align='left'>{data.owner}</TableCell>
 			<TableCell align='left'>
 				{data.Impacted_kpi[0]}{' '}
 				{data.Impacted_kpi[1] > 0 ? (

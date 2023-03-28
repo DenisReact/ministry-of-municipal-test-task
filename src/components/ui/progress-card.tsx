@@ -17,12 +17,11 @@ import Paper from '../layout/paper';
 export default function ProgressCard({ data }: { data: TDataEl }) {
 	return (
 		<Box
-			key={data.id}
 			sx={{
 				display: 'flex',
 				gap: '12px',
 				flexDirection: 'column',
-				maxWidth: '500px',
+				width: 560
 			}}
 		>
 			<Typography
@@ -47,7 +46,7 @@ export default function ProgressCard({ data }: { data: TDataEl }) {
 							alignItems: 'center',
 							gap: '16px',
 							padding: '18px',
-							maxWidth: '50%',
+							width: '50%',
 						}}
 					>
 						<ProgressBar

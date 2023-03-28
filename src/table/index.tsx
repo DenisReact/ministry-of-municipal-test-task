@@ -3,7 +3,6 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 
 import { mockTable, TTable } from '../mockData';
@@ -22,13 +21,13 @@ const tableHeadList = [
 
 export default function CustomTable() {
 	return (
-		<Paper sx={{ maxWidth: '1032px' }}>
-			<Table aria-label='simple table'>
+		<Paper sx={{ width: '1151px', maxHeight: '484px', overflowY: 'auto' }}>
+			<Table>
 				<TableHead>
 					<TableRow>
 						{tableHeadList.map((el: string, index: number) => (
 							<TableCell
-								align={index > 1 ? 'right' : 'center'}
+								align='left'
 								key={el}
 								sx={{ whiteSpace: 'nowrap' }}
 							>
